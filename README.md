@@ -21,7 +21,8 @@ The program provides a simple command line interface for adding, recording, and 
 - `2`: Add expense. You will be prompted for the amount, and description, and category.
 - `3`: Calculate savings.
 - `4`: View a report of your transactions, expense, and savings.
-- `5`: Save data and exit program
+- `5`: Generate a pie chart of financial expenses.
+- `6`: Save data and exit program
 
 ## Contributing
 
