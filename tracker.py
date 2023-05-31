@@ -68,8 +68,15 @@ def generate_expense_report_category():
     categories = set(expense['category'] for expense in expenses)
     print('Available categories:', categories)
     category = input('Enter category: ')
+
+    # Check if the category entered by the user exists in the expenses list
+    if category not in categories:
+        print(f'No expenses found for category: {category}')
+        return
+
     total_amount = sum(expense['amount'] for expense in expenses if expense['category'] == category)
     print(f'You have spent {total_amount} on {category}')
+
 
 # Generate a pie chart of expenses by category
 def generate_expense_chart():
@@ -85,6 +92,7 @@ def generate_expense_chart():
     plt.pie(values, labels=labels, autopct='%1.1f%%')
     plt.title('Expenses by Category')
     plt.axis('equal')
+    plt.ion()
     plt.show()
 
 # Run the program
